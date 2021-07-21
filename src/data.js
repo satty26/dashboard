@@ -6,19 +6,17 @@ var data = [
 
 
 db.collection("recentData").onSnapshot(function (querySnapshot) {
-  querySnapshot.docChanges.forEach((change) => {
-    if(change.type === "added"){
+  querySnapshot.forEach((doc) => {
     data.push({
-      name: change.doc.data().name,
-      email: change.doc.data().email,
-      contactNumber: change.doc.data().contactNumber,
-      academicYear: change.doc.data().academicYear,
-      preference1: change.doc.data().preference1,
-      preference2: change.doc.data().preference2,
-      preference3: change.doc.data().preference3,
-      message: change.doc.data().message,
+      name: doc.data().name,
+      email: doc.data().email,
+      contactNumber: doc.data().contactNumber,
+      academicYear: doc.data().academicYear,
+      preference1: doc.data().preference1,
+      preference2: doc.data().preference2,
+      preference3: doc.data().preference3,
+      message: doc.data().message,
     });
-  }
   });
 });
 
