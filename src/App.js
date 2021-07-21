@@ -1,5 +1,5 @@
 import React from "react";
-import "./app.css";
+import "./App.css";
 import HiringForm from "./components/Hiring";
 
 function App() {
@@ -7,7 +7,6 @@ function App() {
     <div className="app">
       <HiringForm />
     </div>
-    
   );
 }
 
