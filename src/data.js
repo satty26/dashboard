@@ -5,7 +5,7 @@ var data = [
 ];
 
 
-db.collection("recentData").orderBy("timestamp").onSnapshot(function (querySnapshot) {
+db.collection("recentData").orderBy("name").onSnapshot(function (querySnapshot) {
   querySnapshot.forEach((doc) => {
     data.push({
       name: doc.data().name,

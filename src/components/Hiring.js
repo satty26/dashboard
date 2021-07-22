@@ -6,14 +6,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
 function HiringForm() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(-1);
   function nextPage() {
     console.log(index);
     setIndex((index) => (index + 1) % data.length);
   }
   function previousPage() {
     console.log(index);
-    setIndex((index) => Math.abs(index - 1) % data.length);
+    if (index === 0) {
+      setIndex((index) => data.length - 1);
+    } else {
+      setIndex((index) => (index - 1) % data.length);
+    }
+  }
+  function startPage() {
+    console.log(index);
+    setIndex(0);
   }
   return data.length === 0 ? (
     <div className="starting-div">
@@ -21,7 +29,7 @@ function HiringForm() {
         <h1 className="get-started-head">
           E-Cell IIIT Pune Recruitment Responses
         </h1>
-        <Button onClick={nextPage} className="get-started-btn">
+        <Button onClick={startPage} className="get-started-btn">
           Get Started!
         </Button>
       </div>
