@@ -127,10 +127,23 @@ option{
         width: 80%;
     }
     .page-count{
-        margin: 0 32%;
+        margin: 0 35%;
         display: inline;
     }
     .form-field > input,textarea{
         width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #root{
+        width: 90%;
+    }
+    .page-count{
+        margin: 0 30%;
+        display: inline;
+    }
+    .form-field > input,textarea{
+        width: 90%;
     }
 }
