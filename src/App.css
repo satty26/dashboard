@@ -50,11 +50,10 @@ body{
   border: none;
   border-radius: 3px;
   margin-bottom: 20px;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: 'Maven Pro', sans-serif !important;
   border-bottom: 1px solid black;
   font-size: 1.2rem;
   background: #fff;
-  color: #3b3b3b;
   outline: none;
   resize: none;
 }
@@ -101,14 +100,14 @@ option{
     background-color: black;
 }
 .page-count{
-    margin: 0 42%;
+    margin-left: 40%;
     display: inline;
 }
 .prev-btn{
     display: inline !important;
 }
 .next-btn{
-    margin-right: 0;
+    float: right;
     display: inline !important;
 }
 
@@ -126,10 +125,6 @@ option{
     #root{
         width: 80%;
     }
-    .page-count{
-        margin: 0 35%;
-        display: inline;
-    }
     .form-field > input,textarea{
         width: 80%;
     }
@@ -138,10 +133,6 @@ option{
 @media only screen and (max-width: 1200px) {
     #root{
         width: 90%;
-    }
-    .page-count{
-        margin: 0 30%;
-        display: inline;
     }
     .form-field > input,textarea{
         width: 90%;
