@@ -5,8 +5,21 @@ import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+
 function HiringForm() {
+
   const [index, setIndex] = useState(-1);
+  function delData(index){
+    console.log(index);
+  }
+  function askForDel(index){
+    var userInput = prompt("Enter YES if you wish to delete this record permanently");
+    if(userInput === "YES"){
+      delData(index);
+    }
+  }
   function nextPage() {
     console.log(index);
     setIndex((index) => (index + 1) % data.length);
@@ -36,6 +49,8 @@ function HiringForm() {
     </div>
   ) : (
     <div>
+    
+
       <div className="my-form">
         <div className="header">
           <Button onClick={() => previousPage()} className="prev-btn">
@@ -116,31 +131,12 @@ function HiringForm() {
                 id="subject"
                 name="subject"
                 value={data[index].message}
+                rows="8"
+                columns = "50"
               ></textarea>
             </div>
-            <div className="form-field"></div>
-            {/* <div className="form-field">
-          <label className="label-text">Academic Year</label>
-          <Options />
-        </div>
-        <PreferenceButton name="Preference 1" />
-        <PreferenceButton name="Preference 2" />
-        <PreferenceButton name="Preference 3" />
-
-        <div className="form-field">
-          <label className="label-text" for="subject">What will you bring on the table for E-Cell?</label>
-          <textarea
-            id="subject"
-            name="subject"
-          ></textarea>
-        </div>
-
-        <div className="final-button">
-          <button className="submit-button" type="submit">
-            Send My Application
-          </button>
-        </div> */}
           </form>
+          <div className="form-field"></div>
         </div>
       </div>
     </div>
