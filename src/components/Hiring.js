@@ -5,21 +5,21 @@ import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 function HiringForm() {
 
   const [index, setIndex] = useState(-1);
-  function delData(index){
-    console.log(index);
-  }
-  function askForDel(index){
-    var userInput = prompt("Enter YES if you wish to delete this record permanently");
-    if(userInput === "YES"){
-      delData(index);
-    }
-  }
+  // function delData(index){
+  //   console.log(index);
+  // }
+  // function askForDel(index){
+  //   var userInput = prompt("Enter YES if you wish to delete this record permanently");
+  //   if(userInput === "YES"){
+  //     delData(index);
+  //   }
+  // }
   function nextPage() {
     console.log(index);
     setIndex((index) => (index + 1) % data.length);
